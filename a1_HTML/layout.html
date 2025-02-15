@@ -6,16 +6,18 @@
     <title>Layout</title>
 </head>
 
-<!-- layout düzen plan biçim -->
-
+<!-- Layout: düzen plan biçim -->
 <body>
-    <a href="a1_first.html">Anasayfa</a>
-    <br>
-
 
     <header>
-        Bu bir Başlik
+        <h2>This is a Header.</h2>
+        <a href="a1_first.html">Home</a>
+        <a href="">About Us</a>
+        <a href="">Products</a>
+        <a href="">Contact Us</a>
     </header>
+    <hr>    <!-- horizontal row -->
+    <br>
 
     <!-- navigating -->
     <nav>
@@ -25,17 +27,26 @@
             <li>Adana</li>
         </ul>
     </nav>
+    <br>
 
+
+    <!-- <span> inline container to group elements for styling purposes-->
+    <!--  <div> block container to group elements for styling purposes-->
     <article>
-        Burasi ana kisim
-    </article>
+        This is the Main Part.
+        <!-- we can also use <main> instead of <article> -->
 
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span style="background-color: brown;">Eveniet rem magnam est esse asperiores nisi nemo, saepe commodi voluptate officia tempora exercitationem assumenda numquam laudantium magni et laboriosam repellat id.</span> </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. <div style="background-color: aqua;"> Quis, officiis! Cumque officiis laudantium obcaecati dolor, fugit, quis tempore ab quasi sequi at praesentium, voluptatibus minima. Quos, repellat earum. Dolor, laudantium!</div></p>
+
+    </article>
+    <br>
+
+    <hr>
     <!-- sayfa alt bilgi -->
     <footer>
-        Copyright &copy;
+        author: Mehmet Nuri <br>
+        Copyright &copy; <br>
     </footer>
-
-    
-    
 </body>
 </html>

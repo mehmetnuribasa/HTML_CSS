@@ -1,21 +1,40 @@
-h1 {
-    color: blueviolet;
-    background-color: aqua;
-}
+/* CSS: Cascading Style Sheet */
 
 body {
-    color: aliceblue;
-    background-color: black;
+    color: black;
+    background-color: white;
+
+    background-image: url(photo/background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-div {
-    color: aliceblue;
-    border: 1px dashed red; /* edge */
-    background-color: cadetblue;
+h1 {
+    color: blueviolet;
 
-    /* location */
-    margin-top: 100px;
-    margin-left: 50px;
+    /* horizontal, vertical, blur, color */
+    text-shadow: 4px 4px 3px hsl(158, 58%, 52%), -4px -4px 3px hsl(321, 58%, 55%);
+}
+
+.exampleDiv {
+    border: 3px dashed blueviolet; /* edge */
+    border-radius: 5px;
+    
+    /* we can also use this way */
+    /*
+    border-style: dotted;
+    border-color: blueviolet;
+    border-width: 3px;
+    */
+
+    color: black;
+    background-color: hsl(312, 49%, 47%);
+
+    /* location (space around an element)*/
+    margin-top: 50px;
+    margin-left: 25px;
     margin-right: 150px;
     margin-bottom: auto;
 
@@ -23,7 +42,223 @@ div {
     padding: 10px;
     padding-left: 25px;
     padding-bottom: 25px;
+
+    /* box shadowing */
+    /* horizontal, vertical, blur */
+    box-shadow: 5px 5px 10px;
 }
+
+
+/* FLOAT */
+/* float = allows other elements to flow around it */
+#img1 {
+    float: left;
+    height: 100px;
+    margin-right: 10px;
+}
+
+#img2 {
+    float: right;
+    height: 150px;
+    margin-left: 10px;
+}
+
+/* flow-root: provides that the internal elements remain inside the box */
+.div2 {
+    border: 3px solid;
+    display: flow-root;
+
+    margin-bottom: 20px;
+}
+
+
+/* OVERFLOW */
+/* overflow: visible, hidden, clip, scroll, auto */
+.box3 {
+    border: 2px solid;
+    height: 75px;
+    overflow: clip;
+    overflow-clip-margin: 30px;
+
+    margin-bottom: 50px;
+}
+
+.box4 {
+    border: 2px solid;
+    height: 75px;
+    overflow: scroll;   /* if the content is overflow, "auto" states "scroll" */
+
+    margin-bottom: 20px;
+}
+
+
+
+/* DISPLAY */
+/* block-level: start on a new line, take up to full width available
+            (h1, div, p, form, header, footer)
+
+    inline: do not start on a new line, width is limşited to what is needed
+            (span, a, img)
+*/
+
+/* display: block, inline-block, inline, none */
+/* div */
+.box5 {
+    background-color: rgb(191, 89, 89);
+    width: 100px;
+    height: 100px;
+    display: inline;    /* default of div is "block" */    
+}
+
+/* span */
+.box6 {
+    background-color: rgb(157, 157, 227);
+    width: 100px;
+    height: 100px;
+    display: inline-block;    /* default of span is "inline" */
+    visibility: hidden;
+}
+
+
+
+/* WIDTH-HEIGHT */
+.container1 {
+    background-color: hsl(0, 0%, 37%);
+    height: 100vh;      /* viewport high */
+
+}
+
+.box7 {
+    /* box has border with other boxes */
+    box-sizing: border-box;
+
+    border: 2px solid;
+    padding: 15px;
+    height: auto;
+    width: 50%;
+    float: left;
+    text-align: center;
+
+    min-height: 75%;
+    background-color: hsl(0, 0%, 100%);
+}
+
+
+/* POSITION */
+/* 
+    relative: positioned relative to where it normally
+    fixed: positioned relative to the viewport
+    absolute: positioned relative to nearest ancestor
+    sticky: positioned based on scroll position
+    static: default position for an element
+*/
+#box8 {
+    width: 100px;
+    height: 100px;
+    background-color: hsl(158, 52%, 49%);
+    
+    position: relative;
+    top: 50px;
+    left: 50px;
+
+
+    /* Appear on all elements, even if the scroll is scrolled  */
+    /* position: fixed;
+    bottom: 0;
+    left: 50px; */
+
+    /* Mixture of the relative position and fixed position */
+    /* position: sticky;
+    top: 0;
+    left: 50px; */
+}
+
+#box9 {
+    width: 50px;
+    height: 50px;
+    background-color: hsl(1, 52%, 49%);
+    
+    position: absolute;
+    top: 10px;
+    left: 25px;
+
+    /* default position for an element */
+    /* position: static; */
+}
+
+
+
+/* COMBINATORS */
+/* explains the relationship between listed selectors
+    
+      = descendant
+    > = child
+    ~ = general siblings
+    + = adjacent sibling
+
+*/
+#container2 {
+    border: 2px solid;
+}
+
+#container2 > p {
+    background-color: hsl(60, 84%, 73%);
+}
+
+#container2 + p {
+    background-color: hsl(0, 84%, 73%);
+}
+
+
+
+/* PSEUDO-CLASSES */
+.container3 p {
+    background-color: hsl(158, 52%, 49%);
+    padding: 10px;
+    display: none;
+}
+
+.container3:hover p{
+    display: block;
+}
+
+
+.container3 a:link {
+    color: rgb(0, 132, 155);
+    font-size: 1.5em;
+}
+
+.container3 a:hover {
+    color: rgb(63, 155, 171);
+    font-size: 1.6em;
+}
+
+.container3 a:active {
+    color: rgb(2, 79, 93);
+    font-size: 1.6em;
+}
+
+.container3 a:visited {
+    color: rgb(183, 180, 102);
+}
+
+.container3 li:hover {
+    background-color: hsl(0, 71%, 66%);
+}
+
+.container3 li:not(:hover) {
+    background-color: hsla(60, 72%, 79%, 0.82);
+}
+
+.container3 li:nth-child(3n+1) {
+    background-color: hsla(0, 84%, 60%, 0.79);
+}
+
+/* .container3 li:nth-child(even) {
+    background-color: hsla(0, 84%, 60%, 0.79);
+} */
+
+
 
 table {
     border-collapse: collapse;
@@ -31,34 +266,6 @@ table {
 
 }
 
-table, th, td {
-    color: aliceblue;
-    border: 1px solid purple;
-}
-
-th {
-    height: 40px;
-}
-
-td {
-    height: 30px;
-    text-align: left;
-    vertical-align: bottom;
-    padding-left: 15px;
-}
-
-/* when i came to on its with mause */
-tr :hover{
-    background-color: dimgray;
-}
-
-/* tr :nth-child(even) {
-    background-color: aqua;
-}
-
-tr :nth-child(odd) {
-    background-color: aquamarine;
-} */
 
 
 
@@ -82,7 +289,6 @@ input[type=text]:focus, input[type=password]:focus {
 /* for class */
 .myClass {
     color: black;
-    background-color: white;
 }
 
 .myClass:hover {
@@ -90,11 +296,11 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 p.someClass {
-    color: blueviolet;
-    background-color: cadetblue;
+    color: brown;
+    background-color: darkgoldenrod;
 }
 
 /* for id */
-#email {
+#name {
     background-color: blueviolet;
 }

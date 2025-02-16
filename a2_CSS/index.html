@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Example</title>
 
-    <!-- For using stylesheet (extrenal) -->
+    <!-- For using stylesheet (external) -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <!-- For using google font's home icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=home" />
+
+    <!-- For using fontawesom's icons -->
+    <script src="https://kit.fontawesome.com/763ee6e392.js" crossorigin="anonymous"></script>
 
     <!-- It can be possible (internal)-->
     <!-- <style>
@@ -24,8 +30,10 @@
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-
+    <div class="div0">
+        <h1>Hello World!</h1>
+    </div>
+    
     <!-- It can be possible (inline)-->
     <!-- <h1 style="background-color: aqua;" >Hello World!</h1> -->
 
@@ -125,6 +133,118 @@
     <br><br><hr>
 
 
+    <div class="container4">
+        <h1>Pseudo-element</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis aspernatur, error maxime est eos corporis quo voluptates vero, enim expedita a aperiam sint nesciunt voluptatum odio aliquam natus possimus soluta. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et eligendi nemo quae quidem voluptatem, numquam perspiciatis deleniti inventore delectus in! Praesentium, excepturi dolorem harum voluptatum pariatur illum quidem nostrum quae?</p>
+
+        <ul>
+            <li id="apple">apple</li>
+            <li id="orange">orange</li>
+            <li id="banana">banana</li>
+        </ul>
+    </div>
+    <br><br><hr>
+
+
+    <div class="dropdown">
+        <button>Food</button>
+        <div class="content">
+            <a href="apple">Apple</a>
+            <a href="orange">Orange</a>
+            <a href="banana">Banana</a>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, natus sequi amet, necessitatibus totam, expedita labore commodi possimus rem corrupti inventore ex? Atque molestias, architecto reprehenderit ipsa labore ut recusandae!</p>
+    <br><br><hr>
+
+
+    <div class="navigation-bar">
+        <h1>NavBar Demonstration</h1>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h3>This is the Home page</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam inventore sint culpa? Quaerat repellendus labore pariatur laudantium esse velit nulla? Commodi ad voluptatem rerum nobis natus aut corporis vel corrupti!</p>
+        </main>
+    </div>
+    <br><br><hr>
+
+
+    <div class="website-layout">
+
+        <header>
+            <h2>Header</h2>
+        </header>
+
+        <nav class="navbar">
+
+        </nav>
+
+        <main>
+
+            <aside>
+                <h2>This is aside</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit voluptatem atque non facilis ducimus sunt eum rem eos iusto libero possimus laudantium recusandae voluptates vitae, fugiat quaerat, qui consectetur quia.</p>
+            </aside>
+
+            <section>
+                <h2>This is a section</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quibusdam perspiciatis quidem eos fugit commodi, earum ratione dignissimos corrupti veritatis delectus omnis hic suscipit consequuntur explicabo. Vero illum aliquam odio?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam consequatur quis dignissimos illum obcaecati hic explicabo! Nam eligendi in nemo, distinctio, quod deleniti illo doloremque voluptatem modi hic soluta aperiam.</p>
+            </section>
+            
+            <article>
+                <h2>This is an article</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores exercitationem quam quod corporis rem reiciendis ad atque iusto incidunt, libero et velit accusantium. Eum, nihil laudantium eius reprehenderit doloremque eveniet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae minima aliquid tenetur ut odit incidunt nobis saepe! Dolorum deleniti placeat, consequuntur qui, molestias beatae temporibus neque ipsum praesentium sit quisquam!</p>
+            </article>
+
+        </main>
+
+        <footer>
+            <h2>Footer</h2>
+        </footer>
+
+    </div>
+    <br><br><hr>
+
+
+    <div class="icons">
+        <a href="">
+            <i class="fa-solid fa-house fa-2x"></i>     <!-- fa-2x adjusts the size of the icon -->
+        </a>
+        
+        <a href="https://twitter.com">
+            <i class="fa-brands fa-x-twitter fa-2x"></i>
+        </a>
+        
+        <a href="https://youtube.com">
+            <i class="fa-brands fa-youtube fa-2x"></i>
+        </a>
+        <a href="https://instagram.com">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+        </a> 
+    </div>
+    <br><br><hr>
+
+
+    <div class="flexbox">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">5</div>
+        <div class="box" id="box6">6</div>
+    </div>
+    <br><br><hr>
 
 
 
@@ -133,15 +253,6 @@
     EMAİL: <input type="text"><br><br>
     ŞİFRE: <input type="password"><br><br>
     <input type="submit"><br><br>
-
-
-
-
-    <h1 class="myClass">Mehmet Başa</h1>
-
-    <p class="myClass">Mehmet Başa</p>
-    <p class="someClass">Mehmet Başa</p>
-
 </body>
 
 </html>

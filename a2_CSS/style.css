@@ -1,5 +1,8 @@
 /* CSS: Cascading Style Sheet */
 
+/* use for id : "#" */
+/* use for class: "." */
+
 body {
     color: black;
     background-color: white;
@@ -11,7 +14,7 @@ body {
     background-size: cover;
 }
 
-h1 {
+.div0 h1 {
     color: blueviolet;
 
     /* horizontal, vertical, blur, color */
@@ -219,7 +222,7 @@ h1 {
 }
 
 .container3:hover p{
-    display: block;
+    display: inline;
 }
 
 
@@ -260,14 +263,307 @@ h1 {
 
 
 
+/* PSEUDO-ELEMENT */
+.container4 h1::first-letter {
+    font-size: 2em;
+    font-style: italic;
+}
+
+.container4 p::first-line {
+    background-color: hsl(158, 52%, 49%);
+}
+
+.container4 p::selection {
+    color: black;
+    background-color: aqua;
+}
+
+/* .container4 li::before {
+    content: "✓";
+    color: hsl(158, 52%, 49%);
+} */
+
+.container4 #apple::after {
+    content: "🍎";
+}
+
+.container4 #orange::after {
+    content: "🍊";
+}
+
+.container4 #banana::after {
+    content: "🍌";
+}
+
+.container4 li::marker {
+    content: "✓";
+    color: hsl(158, 52%, 49%);
+    font-size: 1.3em;
+}
+
+
+
+/* DROPDOWN MENU */
+.dropdown {
+    /* dropwdown menu opens only when the cursor is on the button */
+    display: inline-block;
+}
+
+.dropdown button {
+    border: none;
+    background-color: hsl(0, 0%, 80%);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;    /* arrange the cursor view */
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;  /* arrange the view of the text exp. underline or none */
+    padding: 10px 15px;
+}
+
+.dropdown .content {
+    /* we can also use visibility (as "hidden"), but we really want it not to be here right now. So we should use "display" */
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 90%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.613);
+}
+
+.dropdown:hover .content {
+    display: block;
+}
+
+.dropdown:hover button {
+    background-color: hsl(0, 0%, 75%);
+}
+
+.dropdown a:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+
+
+/* NAVIGATION BAR */
+.navigation-bar h1 {
+    text-align: center;
+}
+
+.navigation-bar .navbar ul {
+    list-style-type: none;  /* style type of the list */
+    background-color: hsl(0, 0%, 45%);
+    padding: 0;
+    margin: 0;
+
+    /* in this example, if we will use float (as "left"), overflow must be "hidden"  */
+    overflow: hidden;
+}
+
+.navigation-bar .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    display: block;
+    /* display: inline-block; */
+}
+
+.navigation-bar .navbar a:hover {
+    background-color: hsl(0, 0%, 30%);
+}
+
+/* we can also use this way instead of using float */
+/* .navigation-bar .navbar li {
+    display: inline;
+} */
+
+.navigation-bar .navbar li {
+    float: left;
+}
+
+.navigation-bar main {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+
+
+/* WEBSITE LAYOUT */
+/* "*" this statement applies box-sizing all applicable boxes (here, it applies to aside, section, article) */
+.website-layout * {
+    /* keeps the boxes side by side, by calculating the padding */
+    box-sizing: border-box;
+}
+
+.website-layout header {
+    background-color: rgb(180, 180, 180);
+    text-align: center;
+    padding: 25px;
+}
+
+.website-layout .navbar {
+    background-color: rgb(119, 119, 119);
+    height: 50px;
+}
+
+/* actually I can combine the aside, section and article in a div, then I can use these as an inline block. instead of using float (as a "left") */
+.website-layout aside {
+    width: 20%;
+    float: left;
+    padding: 10px;
+
+}
+
+.website-layout section {
+    width: 40%;
+    float: left;
+    padding: 10px;
+
+}
+
+.website-layout article {
+    width: 40%;
+    float: left;
+    padding: 10px;
+
+}
+
+.website-layout footer {
+    display: block;
+    clear: both;    /* it seperates footer from the main */
+    background-color: rgb(180, 180, 180);
+    text-align: center;
+    padding: 25px;
+}
+
+/* adjust the view under 600 pixels */
+@media screen and (max-width:600px) {
+    .website-layout aside {
+        width: 100%;
+    }
+    .website-layout article {
+        width: 100%;
+    }
+    .website-layout section {
+        width: 100%;
+    }
+}
+
+
+/* ICONS */
+.icons {
+    text-align: center;
+}
+
+.icons a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.icons .fa-solid.fa-house {
+    color: hsl(0, 0%, 43%);
+}
+.icons .fa-solid.fa-house:hover {
+    color: hsl(0, 0%, 65%);
+}
+
+.icons .fa-brands.fa-x-twitter.fa-2x {
+    color: hsl(0, 0%, 15%);
+}
+.icons .fa-brands.fa-x-twitter.fa-2x:hover {
+    color: hsl(0, 0%, 40%);
+}
+
+.icons .fa-brands.fa-youtube {
+    color: hsl(0, 100%, 45%);
+}
+.icons .fa-brands.fa-youtube:hover {
+    color: hsla(0, 100%, 50%, 0.877);
+}
+
+.icons .fa-brands.fa-instagram {
+    color: hsl(15, 100%, 52%);
+}
+.icons .fa-brands.fa-instagram:hover {
+    color: hsla(15, 100%, 52%, 0.559);
+}
+
+
+
+/* FLEXBOX */
+.flexbox {
+    border: 5px solid black;
+    height: 90vh;
+
+    display: flex;
+    flex-direction: row;    /* default flex direction is "row" */
+    
+    /* justify content contols on "main axis". It depends on flex-direction */
+    justify-content: space-between;
+
+    /* align items controls on "cross axis" */
+    align-items: flex-end;
+
+    /* row-gap: 2em;
+    column-gap: 2em; */
+
+    /* if the boxes does not fit into a div, "wrap" lets pass a new line */
+    flex-wrap: wrap;
+
+    /* align content is more dominant than align items and align self */
+    /* align-content: flex-end; */
+}
+
+.flexbox .box {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    font-size: 6em;
+    text-align: center;
+}
+
+.flexbox #box1 {
+    background-color: hsl(0, 100%, 68%);
+}
+
+.flexbox #box2 {
+    background-color: hsl(158, 52%, 49%);
+    align-self: flex-start;
+}
+
+.flexbox #box3 {
+    background-color: hsl(296, 52%, 49%);
+
+    /* "-1" represents beginning, "1" represents end */
+    /* order: -1; */
+}
+
+.flexbox #box4 {
+    background-color: hsl(210, 100%, 69%);
+}
+
+.flexbox #box5 {
+    background-color: hsl(70, 52%, 49%);
+}
+
+.flexbox #box6 {
+    background-color: hsl(219, 52%, 49%);
+}
+
+
+
+
+
+
+
 table {
     border-collapse: collapse;
     width: 100%;
 
 }
-
-
-
 
 
 input[type=text], input[type=password] {
@@ -281,26 +577,4 @@ input[type=text], input[type=password] {
 
 input[type=text]:focus, input[type=password]:focus {
     background-color: lightblue;
-}
-
-
-
-
-/* for class */
-.myClass {
-    color: black;
-}
-
-.myClass:hover {
-    background-color: gray;
-}
-
-p.someClass {
-    color: brown;
-    background-color: darkgoldenrod;
-}
-
-/* for id */
-#name {
-    background-color: blueviolet;
 }

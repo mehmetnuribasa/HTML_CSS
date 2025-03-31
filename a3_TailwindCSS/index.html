@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS Sample Website</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- dark mode normally works in "media" mode, which sets the browser's preferred theme by default.
+    we are making manual adjustments by running dark mode in "class" mode. -->
+    <script>
+        tailwind.config = {
+            darkMode: "class", // Let the dark mode work based on the class.
+        };
+    </script>
+    
+    
+</head>
+
+<body>
+    
+    <div class="p-5">
+        <h1 class="text-center text-lg text-green-500">Hello World!</h1>
+
+        <div class="w-full h-10 bg-violet-200 border-2 border-violet-600 rounded-md my-4 p-2">
+            <p class="text-center font-mono font-extrabold">A div</p>
+        </div>
+    
+        
+        <!-- Layout -->
+        <div class="fixed w-10 h-10 bg-red-500 top-0 left-10"></div>
+
+        <div class="flex justify-center space-x-2">
+            <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+            <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+            <div class="h-16 w-16 rounded-full bg-blue-500"></div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 mt-3">
+            <div class="bg-violet-600 h-12"></div>
+            <div class="bg-violet-600 h-12"></div>
+            <div class="bg-violet-600 h-12"></div>
+            <div class="bg-violet-600 h-12"></div>
+            <div class="bg-violet-600 h-12"></div>
+        </div>
+
+
+        <!-- normally it is hidden, but it will appear in the medium size (768px-1024px) as a block -->
+        <div class="md:block hidden mt-6">
+            <p>I will appear for device resolution > 768px </p>
+        </div>
+        <!-- It will appear until the medium size (0px-768px) reaches, othewrwise it remains hidden.-->
+        <div class="max-md:block hidden mt-6">
+            <p>I will appear for device resolution < 768px </p>
+        </div>
+
+        <!-- ring apply a solid box shadow (actually it is a frame like a border)-->
+         <!-- outline controls width of an element's outline(external frame) -->
+        <button class="my-2 rounded-lg bg-blue-500 border-1 border-red-900 px-4 py-2 text-white hover:bg-blue-700
+                        focus:outline-none focus:ring-4 focus:ring-green-800 active:bg-blue-900">
+            Click Me
+        </button>
+
+        <ul class="my-2 space-y-2">
+            <li class="bg-white p-2 first:bg-yellow-100">Item 1</li>
+            <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">Item 2</li>
+            <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">Item 3</li>
+            <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">Item 4</li>
+            <li class="bg-white p-2 first:bg-yellow-100 odd:bg-blue-200 even:bg-green-200">Item 5</li>
+        </ul>
+
+
+        <!-- Theme Dark -->
+        <div class="m-10 rounded-lg bg-white px-6 py-8 shadow-xl ring-1 ring-slate-900/5 dark:bg-black">
+            <!-- tracking controls letter spacing-->
+            <h3 class="text-base font-medium tracking-tight text-slate-900 dark:text-white">This is a text element</h3>
+            <p class="mt-2 text-sm text-slate-500 dark:text-blue-100">This is an even longer p tag element</p>
+         
+            <button
+                id="toggleDark"
+                class="text-blue-900 px-4 py-2 text-sm font-medium mt-8 bg-blue-100 rounded-md"
+            >
+                Toggle Dark Mode
+            </button>
+        </div>
+
+        <!-- arranging the values by manuelly -->
+        <p class="text-[12px] text-fuchsia-500 bg-stone-100 p-[16px]">Fuchsia Color</p>
+
+        <button class="bg-gradient-to-r from-purple-500 to-blue-500
+                        hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring focus:ring-purple-300
+                        active:bg-blue-700 px-6 py-3 my-2 rounded-lg text-white font-semibold
+                        shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+            Click Me
+        </button>
+    </div>
+
+
+    <!-- Javascript code to run the dark mode class-->
+    <script>
+        // If dark mode is active when the page loads, Add class.
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+    
+        document.getElementById("toggleDark").addEventListener("click", function () {
+            document.documentElement.classList.toggle("dark");
+            
+            // If dark mode is active, record to localStorge.
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+DOM (Document Object Model) manipülasyonu ve temel JavaScript 
+
+JavaScript Komutu	                                Ne İşe Yarar?
+
+document	                                        HTML sayfasını temsil eden ana nesnedir.
+document.getElementById("id")	                    Belirtilen id'ye sahip elementi seçer.
+document.documentElement	                        <html> etiketini seçer (tüm sayfayı temsil eder).
+document.documentElement.classList.add("dark")	    <html> etiketine .dark class'ını ekler (dark mode açar).
+document.documentElement.classList.toggle("dark")	.dark class'ını aç/kapat yapar.
+localStorage.setItem("theme", "dark")	            Kullanıcının seçimini tarayıcıya kaydeder.
+localStorage.getItem("theme")	                    Daha önce kaydedilen değeri alır.
